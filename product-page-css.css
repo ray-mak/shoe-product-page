@@ -99,6 +99,25 @@ a {
     background-color: var(--white);
 }
 
+#cart-badge {
+    display: none;
+    width: 22px;
+    height: 16px;
+    position: relative;
+    right: 21%;
+    top: 11%;
+    z-index: 4;
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    background-color: var(--orange);
+    font-size: .7rem;
+    font-weight: 700;
+    padding: 1px;
+    pointer-events: none;
+    margin-right: -22px;
+}
+
 #profile-btn {
     background-image: url(images/image-avatar.png);
     background-size: contain;
@@ -507,6 +526,14 @@ input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
     .dimmer.opened {
         left: 0;
         opacity: 1;
+    }
+
+    #cart-btn {
+        margin-right: 0;
+    }
+
+    #profile-btn {
+        margin-left: 0;
     }
 
     .link-container {
