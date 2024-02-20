@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Shoe Product Page"/>
+        <title>Shoe Product Page</title>
+        <link rel="stylesheet" href="product-page-css.css"/>
+    </head>
+    <body>
+        <header>
+            <div class="hamburger" data-mobile-nav>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="dimmer" data-mobile-nav></div>
+            <img src="images/logo.svg" alt="sneakers logo" id="main-logo"/>
+            <div class="link-container" data-mobile-nav>
+                <a class="link" href="#">Collections</a>
+                <a class="link" href="#">Men</a>
+                <a class="link" href="#">Women</a>
+                <a class="link" href="#">About</a>
+                <a class="link" href="#">Contact</a>
+            </div>
+            <div class="user-container">
+                <button type="button" id="cart-btn" class="round-btn"></button>
+                <button type="button" id="profile-btn" class="round-btn"></button>
+            </div>
+            <div class="cart-container">
+                <div class="cart-header">Cart</div>
+                <div id="summary-container">
+                    Your cart is empty.
+                    <!-- placeholder item HTML and button
+                    <div class="item-summary">
+                        <div class="cart-thumbnail">
+                            <img src="images/image-product-1-thumbnail.jpg" alt="thumnbail of shoe"/>
+                        </div>
+                        <div class="name-price">
+                            <p class="item-name">Fall Limited Edition Sneakers</p>
+                            <p>$<span class="item-price">125.00</span> x <span class="quantity">3</span> <span class="total-price">$375.00</span></p>
+                        </div>
+                        <img class="delete" src="images/icon-delete.svg" alt="delete icon"/>
+                    </div>
+                    <btn id="checkout" type="button">Checkout</btn>
+                -->
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="product-container">
+                <div class="photo-container">
+                    <img id="featured" src="images/image-product-1.jpg" alt="picture of a shoe 1"/>
+                    <div class="thumbnail-container">
+                        <img class="thumbnail selected" src="images/image-product-1.jpg" alt="picture of a shoe 1"/>
+                        <img class="thumbnail" src="images/image-product-2.jpg" alt="picture of a shoe 2"/>
+                        <img class="thumbnail" src="images/image-product-3.jpg" alt="picture of a shoe 3"/>
+                        <img class="thumbnail" src="images/image-product-4.jpg" alt="picture of a shoe 4"/>
+                    </div>
+                </div>
+                <section class="mobile-photo-container">
+                    <div class="carousel" data-carousel>  
+                        <button id="mobile-left" class="round-btn" data-carousel-button="prev"></button>
+                        <button id="mobile-right" class="round-btn" data-carousel-button="next"></button>
+                        <ul class="carousel-track" data-carousel-track>
+                            <li class="slides">
+                                <img class="mobile-photos" src="images/image-product-1.jpg" alt="picture of a shoe 1"/>
+                            </li>
+                            <li class="slides" data-active>
+                                <img class="mobile-photos" src="images/image-product-2.jpg" alt="picture of a shoe 2"/>
+                            </li>
+                            <li class="slides">
+                                <img class="mobile-photos" src="images/image-product-3.jpg" alt="picture of a shoe 3"/>
+                            </li>
+                            <li class="slides">
+                                <img class="mobile-photos" src="images/image-product-4.jpg" alt="picture of a shoe 4"/>
+                            </li>
+                        </ul>   
+                    </div>  
+                </section>
+                <div class="info-container">
+                    <p class="orange">SNEAKER COMPANY</p>
+                    <h1 class="product-title">Fall Limited Edition Sneakers</h1>
+                    <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+                    <div class="price-container">
+                        <span class="price">$125.00</span>
+                        <span class="orange discount">50%</span>
+                        <span class="old-price">$250.00</span>
+                    </div>
+                    <span class="old-price">$250.00</span>
+                    <div class="button-container">
+                        <div class="custom-input-container">
+                            <img id="minus-btn" src="images/icon-minus.svg" alt="minus icon" data-increment-button="down"/>
+                            <input type="number" id="number-input" min="0" value="0"/>
+                            <img id="plus-btn" src="images/icon-plus.svg" alt="plus icon" data-increment-button="up"/>
+                        </div>
+                        <button type="button" id="add-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="lightbox" class="modal">
+            <div class="modal-content">
+                <img id="close-btn" src="images/icon-close.svg" alt="close icon"/>
+                <img id="main-image" src="images/image-product-1.jpg" alt="picture of a shoe 1"/>
+                <button id="left-btn" class="round-btn" type="button"></button>
+                <button id="right-btn" class="round-btn" type="button"></button>
+                <div class="modal-thumbnails">
+                    <div class="thumbnail-bg">   
+                        <img class="mdl-thumbnail selected" src="images/image-product-1.jpg" alt="picture of a shoe 1"/>
+                    </div>
+                    <div class="thumbnail-bg"> 
+                        <img class="mdl-thumbnail" src="images/image-product-2.jpg" alt="picture of a shoe 2"/>
+                    </div>
+                    <div class="thumbnail-bg"> 
+                        <img class="mdl-thumbnail" src="images/image-product-3.jpg" alt="picture of a shoe 3"/>
+                    </div>
+                    <div class="thumbnail-bg"> 
+                        <img class="mdl-thumbnail" src="images/image-product-4.jpg" alt="picture of a shoe 4"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="product-page-js.js" defer></script>
+</html>
