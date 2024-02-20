@@ -11,7 +11,6 @@ const numberInput = document.getElementById("number-input");
 const incrementBtn = document.querySelectorAll("[data-increment-button]");
 const cartBtn = document.getElementById("cart-btn");
 const cartContainer = document.querySelector(".cart-container");
-
 const cartSummary = document.getElementById("summary-container");
 const itemSummary = document.getElementsByClassName("item-summary");
 const itemName = document.getElementsByClassName("item-name");
@@ -20,6 +19,22 @@ const itemPrice = document.getElementsByClassName("item-price");
 const quantity = document.getElementsByClassName("quantity");
 const totalPrice = document.getElementsByClassName("total-price");
 const addToCartBtn = document.getElementById("add-cart-btn");
+const cartBadge = document.getElementById("cart-badge");
+
+//update cart badge
+const updateBadge = () => {
+    if (quantity.length == 0) {
+        cartBadge.style.display = "none";
+    } else {
+        let itemCount = 0;
+        for (let i = 0; i < quantity.length; i++) {
+            count = parseInt(quantity[i].innerText); 
+            itemCount += count;
+            cartBadge.style.display = "block";
+            cartBadge.innerText = `${itemCount}`
+        }
+    }
+}
 
 //open and close cart
 cartBtn.addEventListener("click", (e) => {
@@ -94,6 +109,7 @@ const addToCart = (e) => {
             let currentQuantity = parseInt(quantity[i].innerText);
             quantity[i].innerText = currentQuantity + parseInt(qty);
             updatePrice();
+            updateBadge();
             inCart = true;
             return
         }
@@ -104,11 +120,13 @@ const addToCart = (e) => {
         cartSummary.innerHTML = ``;
         updateCart(title, price, img, qty);
         updatePrice();
+        updateBadge();
         cartSummary.innerHTML += `
         <btn id="checkout" type="button">Checkout</btn>`
     } else {
         updateCart(title, price, img, qty);
         updatePrice();
+        updateBadge();
     }
 }
 
@@ -263,5 +281,6 @@ cartSummary.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete')) {
         event.target.closest('.item-summary').remove();
         checkCart();
+        updateBadge();
     }
 });
